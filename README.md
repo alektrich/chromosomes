@@ -19,3 +19,7 @@ npm run data:bands   # regenerate src/data/bands.json from scripts/cytoBand.hg38
 ```
 
 Deep links: `#chr7`, `#chrX`, `#karyotype/21`. Arrow keys step through chromosomes.
+
+# Live
+
+https://chromosomes.vercel.app
