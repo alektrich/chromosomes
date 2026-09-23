@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive 3D atlas of the 24 human chromosomes with G-banding, morphology and notable loci." />
+    <title>Chromosome Atlas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><g fill='%23f5a524'><rect x='8' y='3' width='7' height='26' rx='3.5'/><rect x='17' y='3' width='7' height='26' rx='3.5'/></g><circle cx='16' cy='13' r='3' fill='%23d9534f'/></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <div class="brand-title">Chromosome <em>Atlas</em></div>
+            <div class="brand-sub">Human karyotype · GRCh38 cytogenetic bands</div>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="segmented" role="tablist" aria-label="View mode">
+            <button role="tab" data-mode="single" aria-selected="true">Chromosome</button>
+            <button role="tab" data-mode="karyotype" aria-selected="false">Karyotype</button>
+          </div>
+          <button class="icon-btn" id="rotate-btn" aria-pressed="true" title="Toggle auto-rotate">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Rotate</span>
+          </button>
+          <button class="icon-btn" id="reset-btn" title="Reset camera">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Reset</span>
+          </button>
+        </div>
+      </header>
+
+      <aside class="panel left">
+        <section>
+          <h2 class="section-title">Select a chromosome</h2>
+          <div class="picker" id="picker"></div>
+        </section>
+        <section id="legend"></section>
+      </aside>
+
+      <main class="stage" id="stage">
+        <div class="stage-nav">
+          <button class="nav-btn" id="prev-btn" aria-label="Previous chromosome">‹</button>
+          <div class="stage-title" id="stage-title"></div>
+          <button class="nav-btn" id="next-btn" aria-label="Next chromosome">›</button>
+        </div>
+        <div class="stage-hint">Drag to orbit · scroll to zoom · hover to read bands · ← → to browse</div>
+        <div class="tooltip" id="tooltip" hidden></div>
+      </main>
+
+      <aside class="panel right" id="info"></aside>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

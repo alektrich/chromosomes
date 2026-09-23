@@ -1,0 +1,19 @@
+{
+  "name": "chromosome-atlas",
+  "version": "1.0.0",
+  "description": "3D atlas of human chromosomes built with three.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "data:bands": "node scripts/build-bands.mjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "three": "^0.186.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  },
+  "private": true
+}
